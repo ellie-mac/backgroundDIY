@@ -4,14 +4,18 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       chrome.scripting.executeScript({
         target: {tabId: tabs[0].id},
         function: changeBackgroundToImage,
-        args: [request.source], // 将图片数据作为参数传递
+        args: [request.source], // transfer the image data to the function
       });
     });
   }
 });
 
 function changeBackgroundToImage(imageData) {
-  // 使用imageData更改背景，例如：
+  // use image data to set the background image of the body
   document.body.style.backgroundImage = `url('${imageData}')`;
+  // ensure the image covers the whole page and keep the image ratio
+  document.body.style.backgroundSize = 'cover'; 
+  document.body.style.backgroundPosition = 'center'; 
+  document.body.style.backgroundRepeat = 'no-repeat';
 }
   
