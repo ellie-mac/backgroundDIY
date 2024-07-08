@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Background Changer",
+    "name": "Background DIY",
     "version": "1.0",
-    "description": "A simple plugin to change the background color of a webpage.",
+    "description": "A simple plugin to change the background of a webpage.",
     "permissions": [
       "activeTab",
       "scripting"
